@@ -49,7 +49,7 @@ public class BoardController {
 		
 		dao.delete(bno);
 		
-		return "redirect:list?page=1"; 
+		return "redirect:list?page=1&result=s"; 
 		
 	}
 	
@@ -57,7 +57,7 @@ public class BoardController {
 	public String modify(BoardVO vo, Model model) throws Exception {
 		
 		dao.update(vo);
-		return "success";
+		return "redirect:view?bno="+vo.getBno()+"&result=s";
 	}
 	
 	

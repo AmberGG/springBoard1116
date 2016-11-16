@@ -43,7 +43,14 @@ $(document).ready(function() {
 		$("#f1").attr("action", "view").submit(); 
 	});
 
+	var result = '${param.result}';
+
+	if(result == 's'){
+		alert("삭제처리완료");
+		window.history.replaceState('', '', "list?page=1");
+	}
 });
+	
 </script>
 
 

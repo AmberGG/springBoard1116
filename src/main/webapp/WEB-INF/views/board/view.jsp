@@ -24,7 +24,7 @@
 <body>
 
 	<h2>${vo.title}</h2>
-	<h4>${vo.writer}</h4>
+	<h4>작성자: ${vo.writer}</h4>
 	<h4>${vo.content}</h4>
 	<p>${vo.updatedate}</p>
 
@@ -32,7 +32,7 @@
 	<button id="modBtn">수정</button>
 	<button id="delBtn">삭제</button>
 
-	<form method="get" id="f1" action="listSearch">
+	<form method="get" id="f1" action="list">
 		<input type="hidden" name="page" value=${param.page}>
 		<input type="hidden" name="sType" value=${param.sType}>
 		<input type="hidden" name="keyword" value=${param.keyword}>
@@ -79,6 +79,11 @@
 		      function (result) { alert(result)	 });
 	  });
 	
+	  var result = '${param.result}';
+
+		if(result == 's'){
+			alert("수정처리완료");
+		}
 
 </script>
 
