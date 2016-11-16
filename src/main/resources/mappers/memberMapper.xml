@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--   namespace : 이름 ; 패키지명까지!  -->
+<mapper namespace="org.zerock.dao.MemberMapper">
+<!-- 	select의 id는 method의 이름처럼! namespace + id까지 합쳐서 경로처럼 됨-->
+
+<!-- inset테스트할거임 -->
+	<insert id="create" parameterType="MemberVO">
+	insert into tbl_smember (userid, userpw) values (#{userid}, #{userpw})
+	</insert>	
+	
+	<select id="read" resultType="MemberVO">
+	select * from tbl_smember where userid= #{userid} 
+	</select>
+	
+	<update id="update" parameterType="MemberVO">
+	update tbl_smember set userpw = #{userpw} where userid = #{userid}
+	</update>
+	
+	<delete id="delete" parameterType="MemberVO">
+	delete from tbl_smember where userpw = #{userpw}
+	</delete>
+</mapper>
